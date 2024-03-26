@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('../fonts/helvatica/stylesheet.css');
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading='lazy'] {
+    clip-path: inset(0.6px);
+  }
+}
+/* @media (min-width: 320px) {
+  .container {
+    max-width: 320px;
+    margin: 0;
+    width: 100%;
+  }
+} */
+
+/* a,
+input,
+button {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-neutral-900;
+} */
+
+body,
+html {
+  @apply font-helvaticaNormal;
+}
+
+.main-slider .slick-dots {
+  bottom: -40px;
+}
+.main-slider .slick-dots li button:before {
+  border: 2px solid #000;
+  border-radius: 50%;
+  color: transparent;
+  font-size: 5px;
+  line-height: 12px;
+  width: 14px;
+  height: 14px;
+}
+.main-slider .slick-dots li.slick-active button:before {
+  opacity: 1;
+  background: #000;
+}
+
+.btn-primary-outline {
+  @apply mx-auto block border border-[#11151C] px-[30px] py-4;
+}
+
+/* accordion style */
+.accordion-item {
+  @apply mb-2 overflow-hidden;
+}
+
+.accordion-content {
+  @apply h-[0px] opacity-0 transition-all duration-300 ease-linear;
+  -webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  -ms-transition: all 500ms ease-out;
+  -o-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+
+.accordion-content.show {
+  @apply opacity-100 sm:h-auto sm:overflow-y-auto md:h-[120px] md:overflow-y-auto lg:h-[160px] lg:overflow-y-auto xl:h-[180px] xl:overflow-y-auto;
+}
+.filter-dropdown option {
+  background: red;
+  color: white;
+  padding: 20px 40px !important;
+  /* @apply py-4 px-8; */
+}
+.filter-dropdown option:checked {
+  background-color: #fff;
+}
+.topbar-marquee {
+  transform: translateX(100%);
+  animation: cssmarquee 50s linear infinite;
+}
+@keyframes cssmarquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slick-next {
+  @apply !hidden;
+}
