@@ -1,5 +1,5 @@
 "use client"
-import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'; // Example icon library
+import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 import React, { useEffect, useState } from 'react';
 
 interface Theme {
