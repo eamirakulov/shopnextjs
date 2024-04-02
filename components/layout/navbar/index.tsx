@@ -22,7 +22,7 @@ export default async function Navbar() {
   ];
   return (
     <div className="container">
-      <nav className="relative flex items-center justify-between border-b border-[#f5f5f5] pt-6 pb-6 shadow-sm">
+      <nav className="relative flex items-center justify-between border-b border-[#11151C] pt-6 pb-6 shadow-sm">
         <div className="block flex-none md:hidden">
           <MobileMenu menu={menu} />
         </div>
@@ -36,7 +36,7 @@ export default async function Navbar() {
               <Image
                 src={logo}
                 alt="logo"
-                className="main-logo xs:max-w-[150px] md:max-w-[200px]"
+                className="main-logo xs:max-w-[150px] md:max-w-[200px] dark:invert"
                 priority={true}
               />
             </Link>
