@@ -64,7 +64,7 @@ export function SliderSection() {
           return (
             <div
               key={index}
-              className="relative !flex items-center justify-center gap-2 bg-[#f5f5f5] xs:flex-col-reverse sm:flex-row md:p-0 md:px-4"
+              className="relative !flex items-center justify-center gap-2 bg-[#f5f5f5] dark:bg-zinc-900    xs:flex-col-reverse sm:flex-row md:p-0 md:px-4"
             >
               <div className="hero-slider-item xs:px-[20px] xs:pb-[30px] sm:px-[0px] sm:pb-[0px] md:w-1/2">
                 <h1
