@@ -1,5 +1,6 @@
 import Cart from 'components/cart';
 import OpenCart from 'components/cart/open-cart';
+import Filter from 'components/filter';
 import { Menu } from 'lib/shopify/types';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -66,6 +67,7 @@ export default async function Navbar() {
           </div>
         </div>
       </nav>
+          <Filter />
     </div>
   );
 }
