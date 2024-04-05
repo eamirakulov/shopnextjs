@@ -41,12 +41,12 @@ export default async function Navbar() {
               />
             </Link>
             {menu.length ? (
-              <ul className="text-md hidden gap-8 md:flex md:items-center">
+              <ul className="menu text-md hidden gap-8 md:flex md:items-center">
                 {menu.map((item: Menu) => (
                   <li key={item.title}>
                     <Link
                       href={item.path}
-                      className="text-neutral-500 underline underline-offset-4 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300"
+                      className="text-[#6E7074] underline underline-offset-4 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300"
                     >
                       {item.title}
                     </Link>
