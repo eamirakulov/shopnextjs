@@ -73,7 +73,7 @@ export function SliderSection() {
                   dangerouslySetInnerHTML={{ __html: item.title }}
                 />
                 <Link href={item.link} legacyBehavior>
-                  <a className="block w-max bg-[#11151c] px-6 py-2 text-sm text-white">Shop Now</a>
+                  <a className="hover:bg-white hover:text-[#11151c] box-border border border-[#11151C] text-[16px] block w-[122px] bg-[#11151c] px-5 py-[14px] text-center text-white">Shop Now</a>
                 </Link>
               </div>
               <Image

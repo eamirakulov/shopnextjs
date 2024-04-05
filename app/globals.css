@@ -35,16 +35,17 @@ html {
 }
 
 .main-slider .slick-dots {
-  bottom: -40px;
+  bottom: -45px;
 }
 .main-slider .slick-dots li button:before {
-  border: 2px solid #000;
+  border: 1px solid #11151C;
   border-radius: 50%;
   color: transparent;
   font-size: 5px;
   line-height: 12px;
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
+  opacity: 1;
 }
 .main-slider .slick-dots li.slick-active button:before {
   opacity: 1;
@@ -105,7 +106,7 @@ html {
 }
 
 .topbar-marquee li{
-  
+
 }
 .menu a {
 
