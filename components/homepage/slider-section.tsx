@@ -73,7 +73,7 @@ export function SliderSection() {
                   dangerouslySetInnerHTML={{ __html: item.title }}
                 />
                 <Link href={item.link} legacyBehavior>
-                  <a className="hover:bg-white hover:text-[#11151c] box-border border border-[#11151C] text-[16px] block w-[122px] bg-[#11151c] px-5 py-[14px] text-center text-white">Shop Now</a>
+                  <a className="dark:bg-white dark:text-[#11151c] hover:bg-white hover:text-[#11151c] box-border border border-[#11151C] text-[16px] block w-[122px] bg-[#11151c] px-5 py-[14px] text-center text-white">Shop Now</a>
                 </Link>
               </div>
               <Image
@@ -84,10 +84,10 @@ export function SliderSection() {
               />
               <div className="absolute right-[64px] top-1/2 translate-y-[-50%]">
                 <ul className="flex list-none flex-col gap-4">
-                  <li className="rounded-full bg-[#11151c] p-2 text-center">
+                  <li className="rounded-full bg-[#11151c] dark:bg-white p-2 text-center">
                     <a href="#">
                       <svg
-                        className="mx-auto"
+                        className="dark:invert mx-auto"
                         width="16"
                         height="14"
                         viewBox="0 0 16 14"
@@ -103,10 +103,10 @@ export function SliderSection() {
                       </svg>
                     </a>
                   </li>
-                  <li className="rounded-full bg-[#11151c] p-2 text-center">
+                  <li className="rounded-full bg-[#11151c] dark:bg-white p-2 text-center">
                     <a href="#">
                       <svg
-                        className="mx-auto"
+                        className="dark:invert mx-auto"
                         width="16"
                         height="14"
                         viewBox="0 0 16 14"
@@ -128,10 +128,10 @@ export function SliderSection() {
                       </svg>
                     </a>
                   </li>
-                  <li className="rounded-full bg-[#11151c] p-2 text-center">
+                  <li className="rounded-full bg-[#11151c] dark:bg-white p-2 text-center">
                     <a href="#">
                       <svg
-                        className="mx-auto"
+                        className="dark:invert mx-auto"
                         width="8"
                         height="15"
                         viewBox="0 0 8 15"
