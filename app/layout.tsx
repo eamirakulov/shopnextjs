@@ -40,7 +40,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <Navbar />
         <TopBar />
         <Suspense>
-          <main className='pt-6'>{children}</main>
+          <main className='pt-[32px]'>{children}</main>
         </Suspense>
       </body>
     </html>

@@ -22,7 +22,7 @@ export default async function Navbar() {
   ];
   return (
     <div className="container">
-      <nav className="relative flex items-center justify-between border-b pt-6 pb-6 dark:border-[#11151C] shadow-sm">
+      <nav className="relative flex items-center justify-between border-b pt-5 pb-5 dark:border-[#11151C] shadow-sm">
         <div className="block flex-none md:hidden">
           <MobileMenu menu={menu} />
         </div>
