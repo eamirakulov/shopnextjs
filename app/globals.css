@@ -49,9 +49,18 @@ html {
 }
 .main-slider .slick-dots li.slick-active button:before {
   opacity: 1;
-  background: #000;
+  background: #11151C;
 }
 
+@media(prefers-color-scheme: dark){
+  .main-slider .slick-dots li.slick-active button:before {
+    background: white;
+    opacity: 1;
+  }
+  .main-slider .slick-dots li button:before {
+    border-color: white;
+  }
+}
 .btn-primary-outline {
   @apply mx-auto block border border-[#11151C] px-[30px] py-4;
 }
@@ -95,7 +104,8 @@ html {
   }
 }
 
-.slick-next {
+.slick-next,
+.slick-prev {
   @apply !hidden;
 }
 

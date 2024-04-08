@@ -3,3 +3,13 @@
 	font-weight: bold;
 	line-height: 80px;
 }
+@media (max-width: 767px) {
+	.heading {
+		font-size: 32px;
+		line-height: 39px;
+	}
+	.sliderText {
+		position: absolute;
+		top: 0;
+	}
+}

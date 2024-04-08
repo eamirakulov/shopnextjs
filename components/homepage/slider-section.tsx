@@ -65,24 +65,24 @@ export function SliderSection() {
           return (
             <div
               key={index}
-              className="relative !flex items-center justify-center gap-2 bg-[#f5f5f5] dark:bg-zinc-900 xs:flex-col-reverse sm:flex-row"
+              className="relative !flex items-center justify-center gap-2 bg-[#f5f5f5] dark:bg-zinc-900 xs:flex-col-reverse sm:flex-row xs:h-[338px] sm:h-[auto]"
             >
-              <div className="px-[64px] xs:pb-[30px] sm:pb-[0px] md:w-1/2">
+              <div className={style.sliderText + ' lg:px-[64px] xs:px-[32px] xs:pt-[30px] xs:pb-[30px] sm:pb-[0px] md:w-1/2'}>
                 <h1
-                  className={style.heading + ' pb-[36px]'}
+                  className={style.heading + ' lg:pb-[36px] xs:pb-[15px]'}
                   dangerouslySetInnerHTML={{ __html: item.title }}
                 />
                 <Link href={item.link} legacyBehavior>
-                  <a className="dark:bg-white dark:text-[#11151c] hover:bg-white hover:text-[#11151c] box-border border border-[#11151C] text-[16px] block w-[122px] bg-[#11151c] px-5 py-[14px] text-center text-white">Shop Now</a>
+                  <a className="dark:bg-white dark:text-[#11151c] hover:bg-white hover:text-[#11151c] box-border border border-[#11151C] text-[16px] block w-[122px] bg-[#11151c] px-5 lg:py-[14px] xs:py-[10px] text-center text-white">Shop Now</a>
                 </Link>
               </div>
               <Image
-                className="xs:w-full md:w-1/2"
+                className="xs:w-[70%] xs:absolute md:relative xs:right-[-60px] xs:bottom-[0px] md:w-1/2"
                 src={item.img}
                 alt="slider img"
                 priority={true}
               />
-              <div className="absolute right-[64px] top-1/2 translate-y-[-50%]">
+              <div className="hidden md:block absolute right-[64px] top-1/2 translate-y-[-50%]">
                 <ul className="flex list-none flex-col gap-4">
                   <li className="rounded-full bg-[#11151c] dark:bg-white p-2 text-center">
                     <a href="#">

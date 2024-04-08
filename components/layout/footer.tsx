@@ -96,7 +96,7 @@ export default async function Footer() {
         </div> */}
       </div>
       <div className="border-t border-[#D0D0D0] py-6 text-sm dark:border-neutral-700">
-        <div className="container mx-auto flex w-full flex-col items-center xs:gap-4 gap-1 md:flex-row md:gap-0 md:px-4 xl:px-0">
+        <div className="container mx-auto flex w-full flex-col items-center xs:gap-4 gap-1 md:flex-row md:gap-0 md:px-4 xl:px-0 opacity-60">
           <p>Built by Opascope &#128640;</p>
           <p className='xs:text-center ml-auto'>
             &copy; {copyrightDate} {copyrightName}
