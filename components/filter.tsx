@@ -1,11 +1,11 @@
 export default function Filter() {
   return (
-    <div className="flex items-center justify-between w-full">
+    <div className="flex items-baseline justify-between w-full pb-[57px]">
       <div className="category-container w-[269px] h-[73px] relative dark:invert">
         <div className="text-[#000000] text-left font-['Helvetica'] text-base font-normal absolute left-[106px] top-0">
           Category
         </div>
-        <div className="w-[269px] h-[39px] static">
+        <div className="cursor-pointer w-[269px] h-[39px] static">
           <div className="border-solid border-[#11151c] border w-[39px] h-[39px] absolute left-0 top-[34px]"></div>
           <svg
             className="w-[39px] h-[39px] absolute left-[59px] top-[34px] overflow-visible"
@@ -24,7 +24,7 @@ export default function Filter() {
             />
           </svg>
           <svg
-            className="w-[39px] h-[39px] absolute left-[173px] top-[34px] overflow-visible"
+            className="cursor-pointer w-[39px] h-[39px] absolute left-[173px] top-[34px] overflow-visible"
             style={{}}
             width="39"
             height="39"
@@ -40,7 +40,7 @@ export default function Filter() {
             />
           </svg>
           <svg
-            className="w-[39px] h-[39px] absolute left-[116px] top-[34px] overflow-visible"
+            className="cursor-pointer w-[39px] h-[39px] absolute left-[116px] top-[34px] overflow-visible"
             style={{}}
             width="39"
             height="39"
@@ -59,7 +59,7 @@ export default function Filter() {
             />
           </svg>
           <svg
-            className="w-[4.93%] h-[18.15%] absolute right-[89.87%] left-[5.2%] bottom-[16.1%] top-[65.75%] overflow-visible"
+            className="cursor-pointer w-[4.93%] h-[18.15%] absolute right-[89.87%] left-[5.2%] bottom-[16.1%] top-[65.75%] overflow-visible"
             style={{}}
             width="14"
             height="14"
@@ -75,7 +75,7 @@ export default function Filter() {
             />
           </svg>
           <svg
-            className="w-[39px] h-[39px] absolute left-[230px] top-[34px] overflow-visible"
+            className="cursor-pointer w-[39px] h-[39px] absolute left-[230px] top-[34px] overflow-visible"
             style={{}}
             width="39"
             height="39"
@@ -97,19 +97,19 @@ export default function Filter() {
           Color
         </div>
         <div className="w-[210px] h-[39px] static">
-          <div className="border-solid border-[#11151c] border w-[39px] h-[39px] absolute left-0 top-[34px] dark:invert"></div>
-          <div className="border-solid border-[#11151c] border w-[39px] h-[39px] absolute left-[57px] top-[34px] dark:invert"></div>
-          <div className="border-solid border-[#11151c] border w-[39px] h-[39px] absolute left-[114px] top-[34px] dark:invert"></div>
-          <div className="border-solid border-[#11151c] border w-[39px] h-[39px] absolute left-[171px] top-[34px] dark:invert"></div>
-          <div className="bg-[#161616] w-[25px] h-[25px] absolute left-[7px] top-[41px]"></div>
-          <div className="bg-[#ebebeb] w-[25px] h-[25px] absolute left-16 top-[41px]"></div>
-          <div className="bg-[#e2dad1] w-[25px] h-[25px] absolute left-[121px] top-[41px]"></div>
-          <div className="bg-[#5a5a5a] w-[25px] h-[25px] absolute left-[178px] top-[41px]"></div>
+          <div className="cursor-pointer border-solid border-[#11151c] border w-[39px] h-[39px] absolute left-0 top-[34px] dark:invert"></div>
+          <div className="cursor-pointer border-solid border-[#11151c] border w-[39px] h-[39px] absolute left-[57px] top-[34px] dark:invert"></div>
+          <div className="cursor-pointer border-solid border-[#11151c] border w-[39px] h-[39px] absolute left-[114px] top-[34px] dark:invert"></div>
+          <div className="cursor-pointer border-solid border-[#11151c] border w-[39px] h-[39px] absolute left-[171px] top-[34px] dark:invert"></div>
+          <div className="cursor-pointer bg-[#161616] w-[25px] h-[25px] absolute left-[7px] top-[41px]"></div>
+          <div className="cursor-pointer bg-[#ebebeb] w-[25px] h-[25px] absolute left-16 top-[41px]"></div>
+          <div className="cursor-pointer bg-[#e2dad1] w-[25px] h-[25px] absolute left-[121px] top-[41px]"></div>
+          <div className="cursor-pointer bg-[#5a5a5a] w-[25px] h-[25px] absolute left-[178px] top-[41px]"></div>
         </div>
       </div>
       <div className="clear w-44 h-10 relative">
         <button className="clear-box w-44 h-10 left-0 top-0 absolute bg-zinc-900 dark:invert">
-          <div className="clear-filters left-[46px] top-[10px] absolute text-white text-base font-normal font-['Helvetica']">
+          <div className="cursor-pointer clear-filters left-[46px] top-[10px] absolute text-white text-base font-normal font-['Helvetica']">
             Clear Filters
           </div>
         </button>
