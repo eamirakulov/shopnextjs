@@ -91,7 +91,7 @@ export default function Filter() {
         </div>
       </div>
 
-      <div className="md:pl-52">
+      <div className="md:pl-80">
         <div className="text-left text-base pb-[16px]">
           Trending
         </div>

@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import Filter from 'components/filter';
 import Grid from 'components/grid';
 import ProductGridItems from 'components/layout/product-grid-items';
 import FilterItemDropdown from 'components/layout/search/filter/dropdown';
@@ -63,7 +64,8 @@ export default async function ProductsPage() {
           </div>
         </nav>
       </div>
-      <div className="pt-4 md:pt-10">
+      <div className="pt-4 md:pt-[60px]">
+        <Filter />
         {products.length > 0 ? (
           <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <ProductGridItems products={products} />
