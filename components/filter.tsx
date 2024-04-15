@@ -1,19 +1,14 @@
 export default function Filter() {
   return (
-    <div className="md:flex items-end w-full pb-[57px]">
-      <div className="category-container relative md:pr-[201px] pb-[17px] md:pb-[0] dark:invert">
+    <div className="md:flex items-end pb-[57px]">
+      <div className="category-container relative md:pr-[201px] pb-[22px] md:pb-[0] dark:invert">
         <div className="dark:invert text-left text-base pb-[16px]">
           Category
         </div>
 
         <div className="flex">
           <div className="item flex items-center justify-center flex-[0_0_39px] border border-[#11151c] mr-[20px] w-[39px] h-[39px] cursor-pointer">
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-            >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -24,13 +19,7 @@ export default function Filter() {
           </div>
 
           <div className="item pr-[20px] cursor-pointer">
-            <svg
-              width="39"
-              height="39"
-              viewBox="0 0 39 39"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="39" height="39" viewBox="0 0 39 39" fill="none">
               <rect x="0.5" y="0.5" width="38" height="38" stroke="#11151C" />
               <path
                 opacity="0.2"
@@ -41,13 +30,7 @@ export default function Filter() {
           </div>
 
           <div className="item pr-[20px] cursor-pointer">
-            <svg
-              width="39"
-              height="39"
-              viewBox="0 0 39 39"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="39" height="39" viewBox="0 0 39 39" fill="none">
               <rect x="0.5" y="0.5" width="38" height="38" stroke="#11151C" />
               <path
                 opacity="0.2"
@@ -58,13 +41,7 @@ export default function Filter() {
           </div>
 
           <div className="item pr-[20px] cursor-pointer">
-            <svg
-              width="39"
-              height="39"
-              viewBox="0 0 39 39"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="39" height="39" viewBox="0 0 39 39" fill="none">
               <rect x="0.5" y="0.5" width="38" height="38" stroke="#11151C" />
               <path
                 opacity="0.2"
@@ -78,13 +55,7 @@ export default function Filter() {
           </div>
 
           <div className="item pr-[20px] cursor-pointer">
-            <svg
-              width="39"
-              height="39"
-              viewBox="0 0 39 39"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="39" height="39" viewBox="0 0 39 39" fill="none">
               <rect x="0.5" y="0.5" width="38" height="38" stroke="#11151C" />
               <path
                 opacity="0.2"
@@ -96,9 +67,8 @@ export default function Filter() {
         </div>
       </div>
 
-
-      <div className="color-container pb-[17px] md:pb-[0]">
-        <div className="text-left text-base pb-[16px] dark:invert">
+      <div className="color-container pb-[22px] md:pb-[0]">
+        <div className="text-left text-base pb-[16px]">
           Color
         </div>
 
@@ -118,6 +88,16 @@ export default function Filter() {
           <div className="flex cursor-pointer items-center justify-center border-solid border-[#11151c] border w-[39px] h-[39px] dark:invert">
             <div className="cursor-pointer bg-[#5a5a5a] w-[25px] h-[25px]"></div>
           </div>
+        </div>
+      </div>
+
+      <div className="md:pl-52">
+        <div className="text-left text-base pb-[16px]">
+          Trending
+        </div>
+
+        <div className="flex cursor-pointer items-center justify-center border-solid border-[#11151c] border w-[39px] h-[39px] dark:invert hover:bg-zinc-900">
+          <div className="cursor-pointer w-[25px] h-[25px]"></div>
         </div>
       </div>
 
