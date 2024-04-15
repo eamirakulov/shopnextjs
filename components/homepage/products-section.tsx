@@ -11,7 +11,7 @@ export const metadata = {
 
 export function ProductsSection({ products }: { products: Product[] }) {
     return (
-        <section className="container mx-auto py-14 md:py-14 lg:py-28 md:px-4 xl:px-0">
+        <section className="container mx-auto py-14 md:py-14 lg:py-18 md:px-4 xl:px-0">
             <Filter />
             {products.length > 0 ? (
                 <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
