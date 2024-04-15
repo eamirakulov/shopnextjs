@@ -97,7 +97,7 @@ export default function Filter() {
         </div>
 
         <div className="flex cursor-pointer items-center justify-center border-solid border-[#11151c] border w-[39px] h-[39px] dark:invert hover:bg-zinc-900">
-          <div className="cursor-pointer w-[25px] h-[25px]"></div>
+          <div className="cursor-pointer"></div>
         </div>
       </div>
 
