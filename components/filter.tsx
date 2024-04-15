@@ -5,10 +5,10 @@ export default function Filter() {
         <div className="text-[#000000] text-left font-['Helvetica'] text-base font-normal absolute left-[106px] top-0">
           Category
         </div>
-        <div className="cursor-pointer w-[269px] h-[39px] static">
-          <div className="border-solid border-[#11151c] border w-[39px] h-[39px] absolute left-0 top-[34px]"></div>
+        <div className="w-[269px] h-[39px] static">
+          <div className="cursor-pointer border-solid border-[#11151c] border w-[39px] h-[39px] absolute left-0 top-[34px]"></div>
           <svg
-            className="w-[39px] h-[39px] absolute left-[59px] top-[34px] overflow-visible"
+            className="cursor-pointer w-[39px] h-[39px] absolute left-[59px] top-[34px] overflow-visible"
             style={{}}
             width="39"
             height="39"
