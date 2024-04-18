@@ -96,8 +96,10 @@ export default function Filter() {
           Trending
         </div>
 
-        <div className="flex cursor-pointer items-center justify-center border-solid border-[#11151c] border w-[39px] h-[39px] dark:invert hover:bg-zinc-900">
-          <div className="cursor-pointer"></div>
+        <div className="flex cursor-pointer justify-center border-solid border-[#11151c] w-[39px] h-[39px]">
+          <input type="checkbox" id="react-option" className="hidden peer w-[39px] h-[39px]"/>
+            <label htmlFor="react-option" className="w-[39px] h-[39px] border border-[#11151c] cursor-pointer peer-checked:bg-[#11151c] hover:bg-[#e2dad1] dark:invert">
+        </label>
         </div>
       </div>
 
