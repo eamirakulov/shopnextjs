@@ -3,6 +3,7 @@ import Filter from 'components/filter';
 import Grid from 'components/grid';
 import ProductGridItems from 'components/layout/product-grid-items';
 import FilterItemDropdown from 'components/layout/search/filter/dropdown';
+import Pagination from 'components/pagination';
 import { breadCrumbArr, sortingProducts } from 'lib/constants';
 import { getProducts } from 'lib/shopify';
 import Link from 'next/link';
@@ -71,6 +72,7 @@ export default async function ProductsPage() {
             <ProductGridItems products={products} />
           </Grid>
         ) : null}
+        <Pagination />
       </div>
     </div>
   );
