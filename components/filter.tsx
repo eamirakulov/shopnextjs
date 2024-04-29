@@ -1,12 +1,44 @@
-export default function Filter() {
+'use client';
+import { Collection } from 'lib/shopify/types';
+import { useState } from 'react';
+
+export default function Filter({
+  colors,
+  collections
+}: {
+  colors: string[];
+  collections: Collection[];
+}) {
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  const handleColorChange = (color: string) => {
+    setSelectedColor(color === selectedColor ? null : color);
+  };
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category === selectedCategory ? null : category);
+  };
+
   return (
-    <div className="md:flex items-end pb-[57px]">
-      <div className="category-container relative md:pr-[201px] pb-[22px] md:pb-[0] dark:invert">
-        <div className="dark:invert text-left text-base pb-[16px]">
-          Category
+    <div className="items-end pb-[57px] md:flex">
+      <div className="category-container relative pb-[22px] dark:invert md:pb-[0] md:pr-[201px]">
+        <div className="pb-[16px] text-left text-base dark:invert">Category</div>
+
+        <div>
+          <select
+            className="focus:shadow-outline  appearance-none rounded border border-gray-400 bg-white px-4 py-2 pr-8 leading-tight shadow hover:border-gray-500 focus:outline-none"
+            value={selectedCategory || collections[0]?.title}
+            onChange={(e) => handleCategoryChange(e.target.value)}
+          >
+            {collections.map(({ handle, title }) => (
+              <option key={handle} value={title}>
+                {title}
+              </option>
+            ))}
+          </select>
         </div>
 
-        <div className="flex">
+        {/* <div className="flex">
           <div className="item flex items-center justify-center flex-[0_0_39px] border border-[#11151c] mr-[20px] w-[39px] h-[39px] cursor-pointer">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
@@ -64,16 +96,13 @@ export default function Filter() {
               />
             </svg>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="color-container pb-[22px] md:pb-[0]">
-        <div className="text-left text-base pb-[16px]">
-          Color
-        </div>
+        <div className="pb-[16px] text-left text-base">Color</div>
 
-        <div className="flex gap-[20px]">
-          <div className="flex items-center justify-center cursor-pointer border-solid border-[#11151c] border w-[39px] h-[39px] dark:invert">
+        {/* <div className="flex items-center justify-center cursor-pointer border-solid border-[#11151c] border w-[39px] h-[39px] dark:invert">
             <div className="cursor-pointer bg-[#161616] w-[25px] h-[25px]"></div>
           </div>
 
@@ -87,25 +116,39 @@ export default function Filter() {
 
           <div className="flex cursor-pointer items-center justify-center border-solid border-[#11151c] border w-[39px] h-[39px] dark:invert">
             <div className="cursor-pointer bg-[#5a5a5a] w-[25px] h-[25px]"></div>
-          </div>
+          </div> */}
+
+        <div>
+          <select
+            className="focus:shadow-outline  appearance-none rounded border border-gray-400 bg-white px-4 py-2 pr-8 leading-tight shadow hover:border-gray-500 focus:outline-none"
+            value={selectedColor || ''}
+            onChange={(e) => handleColorChange(e.target.value)}
+          >
+            <option value="">Select Color</option>
+            {colors.map((color, index) => (
+              <option key={index} value={color}>
+                {color}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 
       <div className="md:pl-80">
-        <div className="text-left text-base pb-[16px]">
-          Trending
-        </div>
+        <div className="pb-[16px] text-left text-base">Trending</div>
 
-        <div className="flex cursor-pointer justify-center border-solid border-[#11151c] w-[39px] h-[39px]">
-          <input type="checkbox" id="react-option" className="hidden peer w-[39px] h-[39px]"/>
-            <label htmlFor="react-option" className="w-[39px] h-[39px] border border-[#11151c] cursor-pointer peer-checked:bg-[#11151c] hover:bg-[#e2dad1] dark:invert">
-        </label>
+        <div className="flex h-[39px] w-[39px] cursor-pointer justify-center border-solid border-[#11151c]">
+          <input type="checkbox" id="react-option" className="peer hidden h-[39px] w-[39px]" />
+          <label
+            htmlFor="react-option"
+            className="h-[39px] w-[39px] cursor-pointer border border-[#11151c] hover:bg-[#e2dad1] peer-checked:bg-[#11151c] dark:invert"
+          ></label>
         </div>
       </div>
 
-      <div className="clear w-44 ml-auto">
-        <button className="clear-box w-44 h-10 left-0 top-0 bg-zinc-900 dark:invert">
-          <div className="cursor-pointer clear-filters left-[46px] top-[10px] text-white text-base font-normal font-['Helvetica']">
+      <div className="clear ml-auto w-44">
+        <button className="clear-box left-0 top-0 h-10 w-44 bg-zinc-900 dark:invert">
+          <div className="clear-filters left-[46px] top-[10px] cursor-pointer font-['Helvetica'] text-base font-normal text-white">
             Clear Filters
           </div>
         </button>
