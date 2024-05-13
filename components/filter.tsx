@@ -1,6 +1,7 @@
 'use client';
+import { getProducts } from 'lib/shopify';
 import { Collection } from 'lib/shopify/types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Filter({
   colors,
@@ -9,6 +10,7 @@ export default function Filter({
   colors: string[];
   collections: Collection[];
 }) {
+  // console.log(data)
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
@@ -19,17 +21,26 @@ export default function Filter({
     setSelectedCategory(category === selectedCategory ? null : category);
   };
 
+  useEffect(() => {
+    const getData = async () => {
+      const products = await getProducts({ sortKey: 'ID', reverse: false, query: '', first: 6 });
+      console.log(products);
+    };
+    getData();
+  }, []);
+
   return (
     <div className="items-end pb-[57px] md:flex">
-      <div className="category-container relative pb-[22px] dark:invert md:pb-[0] md:pr-[201px]">
+      <div className="category-container relative pb-[22px] md:pb-[0] md:pr-[201px] dark:invert">
         <div className="pb-[16px] text-left text-base dark:invert">Category</div>
 
         <div>
           <select
             className="focus:shadow-outline  appearance-none rounded border border-gray-400 bg-white px-4 py-2 pr-8 leading-tight shadow hover:border-gray-500 focus:outline-none"
-            value={selectedCategory || collections[0]?.title}
+            value={selectedCategory || ''}
             onChange={(e) => handleCategoryChange(e.target.value)}
           >
+            <option value="">Select a Category</option>
             {collections.map(({ handle, title }) => (
               <option key={handle} value={title}>
                 {title}

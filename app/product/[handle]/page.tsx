@@ -83,8 +83,8 @@ export default async function ProductPage({ params }: { params: { handle: string
         }}
       />
       <div className="container mx-auto pb-8 md:pb-14 lg:pb-12">
-        <div className="flex flex-col bg-white p-8 dark:border-neutral-800 dark:bg-black md:py-12 md:px-6 lg:flex-row gap-6 xs:px-0">
-          <div className="h-full w-full basis-full lg:basis-2/4 flex flex-col md:flex-row-reverse lg:flex-col xl:flex-row-reverse">
+        <div className="flex flex-col gap-6 bg-white p-8 xs:px-0 md:px-6 md:py-12 lg:flex-row dark:border-neutral-800 dark:bg-black">
+          <div className="flex h-full w-full basis-full flex-col md:flex-row-reverse lg:basis-2/4 lg:flex-col xl:flex-row-reverse">
             <Gallery
               images={product.images.map((image: Image) => ({
                 src: image.url,
@@ -138,4 +138,3 @@ async function RelatedProducts({ id }: { id: string }) {
     </div>
   );
 }
-

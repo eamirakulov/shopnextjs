@@ -1,5 +1,5 @@
 import { ReadonlyURLSearchParams } from 'next/navigation';
-import { Product } from './shopify/types';
+import { Collection, Product } from './shopify/types';
 
 export const createUrl = (pathname: string, params: URLSearchParams | ReadonlyURLSearchParams) => {
   const paramsString = params.toString();
@@ -23,3 +23,9 @@ export function extractProductColors(products: Product[]) {
   });
   return Array.from(colors);
 }
+
+export const filterCollections = (collections: Collection[]) => {
+  return collections.filter(
+    (item) => item.handle !== 'all' && item.handle !== 'frontpage' && item.handle !== ''
+  );
+};

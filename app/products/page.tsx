@@ -5,7 +5,8 @@ import ProductGridItems from 'components/layout/product-grid-items';
 import FilterItemDropdown from 'components/layout/search/filter/dropdown';
 import Pagination from 'components/pagination';
 import { breadCrumbArr, sortingProducts } from 'lib/constants';
-import { getProducts } from 'lib/shopify';
+import { getCollections, getProducts } from 'lib/shopify';
+import { extractProductColors, filterCollections } from 'lib/utils';
 import Link from 'next/link';
 
 export const runtime = 'edge';
@@ -23,6 +24,9 @@ export type BreadCrumbItemType = {
 export default async function ProductsPage() {
   const products = await getProducts({ sortKey: 'ID', reverse: false, query: '', first: 6 });
   const resultsText = products.length > 1 ? 'results' : 'result';
+  const allColors = extractProductColors(products);
+  const collections = await getCollections();
+  const filteredCollections = filterCollections(collections);
   const breadCrumbsData = [...breadCrumbArr, { name: 'All Products', href: '/products' }];
   return (
     <div className="container mx-auto pb-8 xs:pt-6 md:px-6 md:py-6 md:pb-14 lg:py-12">
@@ -66,7 +70,7 @@ export default async function ProductsPage() {
         </nav>
       </div>
       <div className="pt-4 md:pt-[60px]">
-        <Filter />
+        <Filter colors={allColors} collections={filteredCollections} />
         {products.length > 0 ? (
           <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <ProductGridItems products={products} />

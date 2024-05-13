@@ -1,8 +1,6 @@
 import { HIDDEN_PRODUCT_TAG, SHOPIFY_GRAPHQL_API_ENDPOINT, TAGS } from 'lib/constants';
 import { isShopifyError } from 'lib/type-guards';
-import { revalidateTag } from 'next/cache';
-import { headers } from 'next/headers';
-import { NextRequest, NextResponse } from 'next/server';
+
 import {
   addToCartMutation,
   createCartMutation,
@@ -110,7 +108,7 @@ export async function shopifyFetch<T>({
   }
 }
 
-const removeEdgesAndNodes = (array: Connection<any>) => {
+export const removeEdgesAndNodes = (array: Connection<any>) => {
   return array.edges.map((edge) => edge?.node);
 };
 
@@ -181,7 +179,7 @@ const reshapeProduct = (product: ShopifyProduct, filterHiddenProducts: boolean =
   };
 };
 
-const reshapeProducts = (products: ShopifyProduct[]) => {
+export const reshapeProducts = (products: ShopifyProduct[]) => {
   const reshapedProducts = [];
 
   for (const product of products) {
@@ -415,34 +413,41 @@ export async function getProducts({
   return reshapeProducts(removeEdgesAndNodes(res.body.data.products));
 }
 
-// This is called from `app/api/revalidate.ts` so providers can control revalidation logic.
-export async function revalidate(req: NextRequest): Promise<NextResponse> {
-  // We always need to respond with a 200 status code to Shopify,
-  // otherwise it will continue to retry the request.
-  const collectionWebhooks = ['collections/create', 'collections/delete', 'collections/update'];
-  const productWebhooks = ['products/create', 'products/delete', 'products/update'];
-  const topic = headers().get('x-shopify-topic') || 'unknown';
-  const secret = req.nextUrl.searchParams.get('secret');
-  const isCollectionUpdate = collectionWebhooks.includes(topic);
-  const isProductUpdate = productWebhooks.includes(topic);
+export async function getProductsByCategory(
+  collectionHandle: string,
+  first: number = 250
+): Promise<Product[]> {
+  const res = await shopifyFetch<ShopifyCollectionProductsOperation>({
+    query: getCollectionProductsQuery,
+    tags: [TAGS.products],
+    variables: {
+      handle: collectionHandle,
+      first
+    }
+  });
 
-  if (!secret || secret !== process.env.SHOPIFY_REVALIDATION_SECRET) {
-    console.error('Invalid revalidation secret.');
-    return NextResponse.json({ status: 200 });
+  if (!res.body.data.collection) {
+    console.log(`No collection found for \`${collectionHandle}\``);
+    return [];
   }
 
-  if (!isCollectionUpdate && !isProductUpdate) {
-    // We don't need to revalidate anything for any other topics.
-    return NextResponse.json({ status: 200 });
-  }
-
-  if (isCollectionUpdate) {
-    revalidateTag(TAGS.collections);
-  }
-
-  if (isProductUpdate) {
-    revalidateTag(TAGS.products);
-  }
-
-  return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });
+  return reshapeProducts(removeEdgesAndNodes(res.body.data.collection.products));
 }
+
+// export async function getProductsByColor(collectionHandle: string, first: number = 250, color: string): Promise<Product[]> {
+//   const res = await shopifyFetch<ShopifyCollectionProductsOperation>({
+//     query: getProductsByColorQuery,
+//     tags: [TAGS.products],
+//     variables: {
+//       handle: collectionHandle,
+//       color,
+//       first
+
+//     }
+//   })
+//   if (!res.body.data.collection.products) {
+//     console.log(`There is no product with this`);
+//     return []
+//   }
+//   return reshapeProducts(removeEdgesAndNodes(res.body.data.collection.products))
+// }
